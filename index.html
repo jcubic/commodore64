@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="Description" content=""/>
+    <link rel="shortcut icon" href=""/>
+    <!--[if IE]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link href="terminal/css/jquery.terminal.css" rel="stylesheet"/>
+    <style>
+@font-face {
+    font-family: 'commodore64';
+    src: url('font/commodore-64-v6.3-webfont.eot');
+    src: url('font/commodore-64-v6.3-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/commodore-64-v6.3-webfont.woff') format('woff'),
+         url('font/commodore-64-v6.3-webfont.ttf') format('truetype'),
+         url('font/commodore-64-v6.3-webfont.svg#webfontregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    background-color: #B9B7AA;
+}
+.wrapper {
+    position: absolute;
+    left: 50%;
+    margin-left: -250px;
+}
+.wrapper, .monitor {
+    width: 500px;
+    height: 350px;
+}
+.monitor {
+    position: absolute;
+    top: 0
+    left: 0;
+}
+.wrapper {
+    position: relative;
+    background-color: #9C9CFF;
+}
+#term {
+    position: absolute;
+    top: 80px;
+    left: 65px;
+    z-index: 100;
+}
+.monitor {
+    background: transparent url(monitor.png) no-repeat;
+	*background-image: none;
+
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='monitor.png', sizingMethod='scale');
+}
+.terminal {
+    background-color: #3939DE;
+    color: #9C9CFF;
+    font-size: 14px;
+    font-family: commodore64, FreeMono, monospace;
+    font-weight: bold;
+    padding: 0;
+}
+.terminal .cmd span.inverted {
+    background-color: #9C9CFF;
+    color: #3939DE;
+}
+.terminal-output > div {
+    padding-top: 0;
+}
+.terminal-output > div, .terminal-output > div > div {
+    margin-bottom: -3px;
+}
+.cmd {
+    height: 1em;
+}
+.cmd span {
+    margin-top: -3px;
+}
+    </style>
+    <script src="terminal/js/jquery-1.7.1.min.js"></script>
+	<script src="terminal/js/jquery.terminal-src.js"></script>
+    <script>
+$(function() {
+    $('#term').terminal(function() {
+    }, {
+        prompt: '',
+        greetings: '     **** COMMODORE 64 BASIC V2 ****\n\n' +
+            ' 64K RAM SYSTEM   38911 BASIC BYTES FREE\n\nREADY.',
+        keypress: function(e, term) {
+            term.insert(String.fromCharCode(e.which).toUpperCase());
+            return false;
+        },
+        width: 370,
+        height: 190
+    });
+
+});
+    </script>
+</head>
+<body>
+    <a href="https://github.com/jcubic/commodore64" style="position: fixed; top: 0; left: 0; z-index:1000"><img style="border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork Commodore64 Demo on GitHub"/></a>
+	<div class="wrapper">
+		<div class="monitor"></div>
+		<div id="term"></div>
+	</div>
+</body>
+</html>
