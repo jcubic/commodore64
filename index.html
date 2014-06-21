@@ -42,7 +42,7 @@ body {
 	*background-image: none;
     filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='monitor.png', sizingMethod='scale');
 }
-.terminal {
+.terminal, .cmd {
     background-color: #3939DE;
     color: #9C9CFF;
     font-size: 14px;
@@ -56,8 +56,8 @@ body {
 .terminal-output > div {
     padding-top: 0;
 }
-.terminal-output > div, .terminal-output > div > div {
-    margin-bottom: -3px;
+div.terminal-output div div {
+    margin-top: -3px;
 }
 .cmd {
     height: 1em;
