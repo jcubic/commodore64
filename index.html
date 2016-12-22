@@ -36,6 +36,8 @@ body {
     top: 80px;
     left: 65px;
     z-index: 100;
+	padding: 8px 0 0;
+    box-sizing: border-box;
 }
 .monitor {
     background: transparent url(monitor.png) no-repeat;
@@ -52,6 +54,48 @@ body {
 .terminal .cmd span.inverted {
     background-color: #9C9CFF;
     color: #3939DE;
+}
+@-webkit-keyframes terminal-blink {
+  0%, 100% {
+      background-color: #9C9CFF;
+      color: #3939DD;
+  }
+  50% {
+      background-color: #3939DD;
+      color: #9C9CFF;
+  }
+}
+
+@-ms-keyframes terminal-blink {
+  0%, 100% {
+      background-color: #9C9CFF;
+      color: #3939DD;
+  }
+  50% {
+      background-color: #3939DD;
+      color: #9C9CFF;
+  }
+}
+
+@-moz-keyframes terminal-blink {
+  0%, 100% {
+      background-color: #9C9CFF;
+      color: #3939DD;
+  }
+  50% {
+      background-color: #3939DD;
+      color: #9C9CFF;
+  }
+}
+@keyframes terminal-blink {
+  0%, 100% {
+      background-color: #9C9CFF;
+      color: #3939DD;
+  }
+  50% {
+      background-color: #3939DD;
+      color: #9C9CFF;
+  }
 }
 .terminal-output > div {
     padding-top: 0;
@@ -92,5 +136,22 @@ $(function() {
 		<div class="monitor"></div>
 		<div id="term"></div>
 	</div>
+	<!-- Piwik -->
+    <script type="text/javascript">
+     if (location.host == 'terminal.jcubic.pl') {
+         var _paq = _paq || [];
+         _paq.push(['trackPageView']);
+         _paq.push(['enableLinkTracking']);
+         (function() {
+             var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.jcubic.pl/";
+             _paq.push(['setTrackerUrl', u+'piwik.php']);
+             _paq.push(['setSiteId', 1]);
+             var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+             g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+         })();
+     }
+    </script>
+    <noscript><p><img src="http://piwik.jcubic.pl/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
 </body>
 </html>
