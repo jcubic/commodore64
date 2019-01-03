@@ -36,6 +36,8 @@ body {
     top: 80px;
     left: 65px;
     z-index: 100;
+    --color: #9C9CFF;
+    --background: #3939DE;
 }
 .monitor {
     background: transparent url(monitor.png) no-repeat;
@@ -43,9 +45,6 @@ body {
     filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='monitor.png', sizingMethod='scale');
 }
 .terminal, .cmd {
-    background-color: #3939DE;
-    color: #9C9CFF;
-    font-size: 14px;
     font-weight: bold;
     padding: 0;
 }
@@ -56,7 +55,7 @@ body {
 .terminal-output > div {
     padding-top: 0;
 }
-div.terminal-output div div {
+div.terminal-output > div:not(:first-child) div {
     margin-top: -3px;
 }
 .cmd {
