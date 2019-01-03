@@ -59,11 +59,15 @@ body {
 .terminal-output > div {
     padding-top: 0;
 }
-div.terminal-output > div:not(:first-child) div {
-    margin-top: -3px;
+div.terminal-output > div:not(:first-child) div, .cmd {
+    position: relative;
+    top: -3px;
 }
 .cmd {
     height: 1em;
+}
+.terminal .terminal-output > :not(.raw) > div {
+    padding-bottom: 0;
 }
     </style>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
