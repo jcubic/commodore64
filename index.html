@@ -8,7 +8,7 @@
     <!--[if IE]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link href="terminal/css/jquery.terminal.css" rel="stylesheet"/>
+    <link href="terminal/css/jquery.terminal-src.css" rel="stylesheet"/>
     <style>
 body {
     background-color: #B9B7AA;
@@ -36,12 +36,12 @@ body {
     top: 80px;
     left: 65px;
     z-index: 100;
-    --color: #9C9CFF;
-    --background: #3939DE;
+    padding: 8px 0 0;
+    box-sizing: border-box;
 }
 .monitor {
     background: transparent url(monitor.png) no-repeat;
-	*background-image: none;
+    *background-image: none;
     filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='monitor.png', sizingMethod='scale');
 }
 .terminal, .cmd {
@@ -52,6 +52,10 @@ body {
     background-color: #9C9CFF;
     color: #3939DE;
 }
+.terminal {
+    --color: #9C9CFF;
+    --background: #3939DE;
+}
 .terminal-output > div {
     padding-top: 0;
 }
@@ -61,12 +65,9 @@ div.terminal-output > div:not(:first-child) div {
 .cmd {
     height: 1em;
 }
-.cmd span {
-    margin-top: -3px;
-}
     </style>
-    <script src="terminal/js/jquery-1.7.1.min.js"></script>
-	<script src="terminal/js/jquery.terminal-src.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="terminal/js/jquery.terminal-src.js"></script>
     <script>
 $(function() {
     $('#term').terminal(function() {
@@ -87,9 +88,26 @@ $(function() {
 </head>
 <body>
     <a href="https://github.com/jcubic/commodore64" style="position: fixed; top: 0; left: 0; z-index:1000"><img style="border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork Commodore64 Demo on GitHub"/></a>
-	<div class="wrapper">
-		<div class="monitor"></div>
-		<div id="term"></div>
-	</div>
+    <div class="wrapper">
+        <div class="monitor"></div>
+        <div id="term"></div>
+    </div>
+    <!-- Piwik -->
+    <script type="text/javascript">
+     if (location.host == 'terminal.jcubic.pl') {
+         var _paq = _paq || [];
+         _paq.push(['trackPageView']);
+         _paq.push(['enableLinkTracking']);
+         (function() {
+             var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.jcubic.pl/";
+             _paq.push(['setTrackerUrl', u+'piwik.php']);
+             _paq.push(['setSiteId', 1]);
+             var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; g.type='text/javascript';
+             g.defer=true; g.async=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+         })();
+     }
+    </script>
+    <noscript><p><img src="http://piwik.jcubic.pl/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
 </body>
 </html>
